@@ -1,0 +1,65 @@
+1. დაწერეთ მოთხოვნები: 
+Header:
+ - გვერდს აქვს ჰედერი - size: 545x20
+ - ჰედერის მარცხნივ მოცემულია ლოგო: size
+ - მომხმარებელს შეუძლია აირჩიოს დელივერი ადრესი
+ - დელივერი ადრესზე დაჭერის შემთხვევაში გამოდის "choose your location" ფანჯარა
+ - ღილაკები: ..., ..., ... 
+ - Search bar - მომხმარებელს შეუძლია აირჩიოს კატეგორია სერჩ ბარში
+ - Search-ში ძებნა იწყება პირველი ქერექთერიდან
+ - სერჩის ისტორია (ისტორიის გასუფთავება x ღილაკით)
+ - სერჩის შეთავაზებები
+ - ენის არჩევის ოფცია: ენის შეცვლასთან ერთად უნდა იცლვებოდეს დროშაც
+ - ენის ღილაკთან ჰოვერის შემთხვევაში ჩნდება პოპაპ ფანჯარა - იუზერს შეუძლია შეცვალოს ენა
+...
+Main page:
+- სლადერი: 1500x600 - არ არის აუტოფლეი
+- შემოთავაზებები - card size
+- კატეგორიების შემთხვევაში გვაქვს hyperlink - see more
+- see more ღილაკზე დაჭერისას user is redirected to URL
+- item-ის შემთხვევაში: shop now - ღილაკზე დაჭერისას user is redirected to URL
+
+2. მოთხოვნების მიხედვით დაწერეთ ტესტ ქეისები/დაწერეთ ტესტ ქეისები: 
+Test Case ID: 001
+Test Scenario:  ენის შეცვლა
+Preconditions/Prerequisite: User is landed on https://www.amazon.com
+Steps to Reproduce:
+1. დააჭირეთ ენის ღილაკს
+2. აირჩიეთ ენა (PT)
+3. შეამოწმეთ ტექსტები
+Expected Result:
+1. გამოდის ახალი ფანჯარა ენების ჩამონათვალით (screen.png)
+2. ენა იცვლება პორტულაგიურზე
+Test Data: ენა: PT
+Test Status: Pas
+Environment: Prod (Test)
+
+
+3. იპოვეთ და აღწერეთ ბაგები:
+   BugID: 001
+   Summary/Bug Description: 
+   Preconditions/Prerequisite: User is landed on https://www.amazon.com
+   Steps to Reproduce:
+        1. დააჭირეთ ენის ღილაკს
+  	2. აირჩიეთ ენა (PT)
+        3. შეამოწმეთ ტექსტები
+   Expected Result:
+	1. გამოდის ახალი ფანჯარა ენების ჩამონათვალით (screen.png)
+	2. ენა იცვლება პორტულაგიურზე
+        3. იცვლება დროშა
+   Actual Result:
+        3. დროშა არ იცვლება
+   Test Data: ენა: PT
+   Environment: Prod
+   Devices: Web - Google Chrome
+
+4. დააპრიორიტეტეთ თქვენ მიერ ნაპოვნი ბაგები, justify your reasoning:
+   არ მუშაობს სერჩი, კალათაში დამატება, ლოკაციის არჩევა, კატეგორიების საიდბარი - მიანიჭეთ პრიორიტეტები
+Search priority: high
+Add to cart: high
+Choose location:
+Category sidebar: low
+
+5. ქეისი როცა ღილაკზე/ჰაიპერლინკზე, ა.შ. დაჭერისას არაფერი ხდება - როგორ მოიქცეოდით (ვხსნით კონსოლს, ვამოწმებთ response-ს)
+
+6. მოცემულია ბაგი, დაწერეთ რეპორტი და specify bug type (Functional, Content, Visual, Performance, Crash)
